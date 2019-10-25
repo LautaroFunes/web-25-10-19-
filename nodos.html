@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Formulario </title>
+        <link rel="stylesheet" href="clase1.css">
+    </head>
+    <body>
+        <div id="todo">
+            <p> <strong> Dni: </strong> <input type="number" id="dni"> </p>
+            <p id="eliminar"> <strong> Clave: </strong> <input type="password" class="clave" id="clave1"> </p>
+            <div id="intento"> <p> <strong> Clave2: </strong> <input type="password" class="clave" id="clave2" > </p> </div>
+            <p> <input type="button" id="botonClave" onclick="botClave()" value="Esto deberia hacer algo" > </p>
+        </div>
+        <script>
+            function botClave(){
+                var dni = document.getElementById("dni").value;
+                var clave = document.getElementsByClassName("clave");
+                alert("El dni es: " +dni);
+              //  var clave1 = document.getElementById("clave1");
+              //  var clave2 = document.getElementById("clave2");
+                for(i=0; i<clave.length; i++){
+                    alert("La clave " + i +" es "+ clave[i].value);
+                    if(/*clave1!=clave2*/clave[i].value!=clave[i+1].value){
+                        document.body.style.backgroundColor="#E1EFF1";
+                        var incorrecto = document.getElementById("intento");
+                        var mensaje = document.createTextNode("Error");
+                        incorrecto.appendChild(mensaje);    
+                        var elementoAeliminar = document.getElementById("eliminar");
+                        elementoAeliminar.parentNode.removeChild(elementoAeliminar);
+                    }
+                    //alert("La clave " + i + " es " + clave[i].value);
+                }
+            }
+        </script>
+    </body>
+</html>
