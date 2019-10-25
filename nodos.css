@@ -1,0 +1,14 @@
+#botonClave{
+    padding: 2px 20px;
+}
+
+#todo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #E1EFF1;
+    padding: 50px 50px;
+    border: 6px solid #B6F2F9;
+    height:300px;
+    width: 300px;
+}
